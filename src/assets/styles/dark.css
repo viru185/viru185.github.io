@@ -1,0 +1,47 @@
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+
+.dark-mode header,
+.dark-mode .contact,
+.dark-mode .section {
+    background: #1e1e1e;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.dark-mode h1 {
+    color: #bb86fc;
+}
+
+.dark-mode h2 {
+    color: #bb86fc;
+    border-bottom: 2px solid #bb86fc;
+    padding-bottom: 3px;
+}
+
+.dark-mode a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+.dark-mode ul {
+    padding-left: 18px;
+}
+
+.dark-mode p {
+    margin: 4px 0;
+}
+
+.dark-mode .two-column {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dark-mode .column {
+    width: 48%;
+}
