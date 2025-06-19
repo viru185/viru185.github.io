@@ -53,29 +53,42 @@ viru185.github.io
 
 ---
 
-## Deployment to GitHub Pages (viru185.github.io) — Automated with GitHub Actions
+## Deployment to GitHub Pages (viru185.github.io)
 
-This project uses a GitHub Actions workflow to automatically build and deploy your site to GitHub Pages every time you push to the `main` branch. You do not need to manually copy the build folder or run extra commands.
+For user/organization sites like `viru185.github.io`, GitHub Pages only serves from the root of the `main` branch. This means you must build your site locally and copy the contents of the `build` folder to the root of your repository before pushing.
 
-### 1. Push your changes to `main`
+### 1. Build the production files
+
+```sh
+npm run build
+```
+This will create a `build` folder with the production-ready static files.
+
+### 2. Copy the build output to the root of your repository
+
+```sh
+# On Windows PowerShell
+Copy-Item -Path .\build\* -Destination .\ -Recurse -Force
+
+# Remove the build folder (optional)
+Remove-Item -Recurse -Force .\build
+```
+
+### 3. Commit and push your changes
 
 ```sh
 git add .
-git commit -m "Your message"
+git commit -m "Deploy production build to GitHub Pages"
 git push origin main
 ```
 
-### 2. GitHub Actions will build and deploy automatically
-- The workflow in `.github/workflows/deploy.yml` will run on every push to `main`.
-- It builds your React app and publishes the `build` output to the root of the `main` branch (as required for user/organization sites).
-
-### 3. Configure GitHub Pages (one-time setup)
+### 4. Configure GitHub Pages (one-time setup)
 - Go to your repository on GitHub.
 - Click **Settings** > **Pages**.
 - Under **Source**, select the `main` branch and `/ (root)` folder.
 - Save.
 
-### 4. Access your site
+### 5. Access your site
 - Visit: https://viru185.github.io
 
 **Note:**
