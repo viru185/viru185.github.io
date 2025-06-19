@@ -1,0 +1,29 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "A modern personal website with dark and light mode features.",
+  "main": "src/App.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "personal",
+    "website",
+    "portfolio",
+    "react",
+    "dark-mode",
+    "light-mode"
+  ],
+  "author": "Viren Hirpara",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.1"
+  },
+  "homepage": "https://viru185.github.io",
+  "browserslist": ">0.2%, not dead, not op_mini all"
+}
