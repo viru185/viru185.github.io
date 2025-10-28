@@ -5,56 +5,216 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Viren Hirpara - Personal Website</title>
-  <link rel="stylesheet" href="src/syles.css">
+  <link rel="stylesheet" href="src/styles.css">
   <link rel="stylesheet" href="src/theme/dark.css" id="theme-style">
 </head>
 
 <body>
+  <header class="site-header" data-glass>
+    <div class="site-header__inner">
+      <a class="brand" href="#home" aria-label="Navigate to home">
+        <span class="brand__accent"></span>
+        <span class="brand__text">Viren Hirpara</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__line"></span>
+      </button>
+      <nav id="primary-navigation" class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <!-- nav bar -->
-  <div class="nav-bar">
-    <h1>this is nav bar</h1>
-  </div>
-  <!-- nav bar finish -->
+  <main>
+    <section id="home" class="section hero" aria-labelledby="home-heading">
+      <div class="hero__content" data-glass>
+        <div class="hero__text">
+          <p class="hero__eyebrow">Software Engineer | Problem Solver</p>
+          <h1 id="home-heading">Viren Hirpara</h1>
+          <p class="hero__subheading">Building delightful digital experiences with robust engineering.</p>
+          <p class="hero__summary">
+            I design and develop performant web applications with a keen eye for detail, accessibility, and maintainability.
+            I'm passionate about crafting impactful products and collaborating with teams that ship fast and responsibly.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="assets/Viren_Hirpara_Resume_4.0.0.pdf" download>Download Resume</a>
+            <div class="hero__links">
+              <a href="#projects">View Projects</a>
+              <a href="#experience">See Experience</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero__media">
+          <img src="assets/hero_img.jpg" alt="Portrait of Viren Hirpara" loading="lazy">
+        </div>
+      </div>
+    </section>
 
-  <!-- hero -->
-  <section class="hero-section section-max">
-    <h1>this is hero section.</h1>
-  </section>
-  <!-- hero finish -->
+    <section id="projects" class="section projects" aria-labelledby="projects-heading">
+      <div class="section__header">
+        <h2 id="projects-heading">Featured Projects</h2>
+        <p>Selected work across web, product, and experimentation.</p>
+      </div>
+      <div class="projects__grid" data-project-grid>
+        <!-- Project cards injected from JSON -->
+      </div>
+    </section>
 
-  <!-- project -->
-  <section class="project-section section-max">
-    <h1>this is project section.</h1>
-  </section>
-  <!-- project finish -->
+    <section id="experience" class="section experience" aria-labelledby="experience-heading">
+      <div class="section__header">
+        <h2 id="experience-heading">Experience</h2>
+        <p>Recent roles where I shipped, optimized, and scaled impactful products.</p>
+      </div>
+      <div class="timeline" data-glass>
+        <article class="timeline__item">
+          <div class="timeline__meta">
+            <span class="timeline__date">Mar 2023 - Present</span>
+            <span class="timeline__location">Ahmedabad, India</span>
+          </div>
+          <div class="timeline__content">
+            <h3>Senior Frontend Engineer - TechNova Labs</h3>
+            <p>Leading the front-end architecture for analytics dashboards serving 50k+ users; introduced performance budgets that reduced load times by 35%.</p>
+            <ul>
+              <li>Scaled component library with accessibility baked-in.</li>
+              <li>Partnered with product to iterate rapidly on experimentation flows.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="timeline__item">
+          <div class="timeline__meta">
+            <span class="timeline__date">Sep 2020 - Feb 2023</span>
+            <span class="timeline__location">Surat, India</span>
+          </div>
+          <div class="timeline__content">
+            <h3>Frontend Engineer - BrightPixel Studio</h3>
+            <p>Delivered bespoke web experiences for fintech and healthcare partners, collaborating closely with designers and backend teams.</p>
+            <ul>
+              <li>Built reusable data visualization primitives across clients.</li>
+              <li>Instituted CI/CD pipelines, cutting release time by 50%.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <!-- experience -->
-  <section class="experience-section section-max">
-    <h1>this is experience section.</h1>
-  </section>
-  <!-- experience finish -->
+    <section id="education" class="section education" aria-labelledby="education-heading">
+      <div class="section__header">
+        <h2 id="education-heading">Education</h2>
+        <p>Grounded in computer science with hands-on, industry-aligned learning.</p>
+      </div>
+      <div class="timeline timeline--compact" data-glass>
+        <article class="timeline__item">
+          <div class="timeline__meta">
+            <span class="timeline__date">2016 - 2020</span>
+            <span class="timeline__location">Rajkot, India</span>
+          </div>
+          <div class="timeline__content">
+            <h3>Bachelor of Engineering - Computer Science</h3>
+            <p>At Marwadi University - Graduated with 8.7 CGPA.</p>
+            <ul>
+              <li>Led the university coding club and organized 5+ hackathons.</li>
+              <li>Capstone project on intelligent DevOps automation.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="timeline__item">
+          <div class="timeline__meta">
+            <span class="timeline__date">2014 - 2016</span>
+            <span class="timeline__location">Surat, India</span>
+          </div>
+          <div class="timeline__content">
+            <h3>Higher Secondary - Science</h3>
+            <p>S.D. Jain Modern School - 92% overall with distinction in Math.</p>
+            <ul>
+              <li>Represented school at the national robotics challenge.</li>
+              <li>Contributed to tech magazine on innovation trends.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <!-- education -->
-  <section class="education-section section-max">
-    <h1>this is education section.</h1>
-  </section>
-  <!-- education finish -->
+    <section id="about" class="section about" aria-labelledby="about-heading">
+      <div class="section__header">
+        <h2 id="about-heading">About Me</h2>
+        <p>Engineer, mentor, and lifelong learner curious about how humans interact with technology.</p>
+      </div>
+      <div class="about__content" data-glass>
+        <p>
+          I enjoy solving complex UX and performance challenges across the stack, pairing human-centered design with reliable engineering.
+          Outside of coding, you'll find me mentoring early-career developers, exploring interface micro-interactions, and contributing to open-source tooling.
+        </p>
+        <p>
+          I'm energized by fast-moving teams that care deeply about craft, clarity, and user empathy. Let's build something remarkable together.
+        </p>
+        <div class="about__highlights">
+          <article>
+            <h3>Craft</h3>
+            <p>Systems thinking to design scalable component architectures that stay delightful under pressure.</p>
+          </article>
+          <article>
+            <h3>Leadership</h3>
+            <p>Mentored cross-functional squads and led discovery workshops to align on outcomes that matter.</p>
+          </article>
+          <article>
+            <h3>Community</h3>
+            <p>Speaker at local meetups on performance optimization and design systems; active OSS contributor.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <!-- about me -->
-  <section class="about-section section-max">
-    <h1>this is about me section.</h1>
-  </section>
-  <!-- about me finish -->
+    <section id="contact" class="section contact" aria-labelledby="contact-heading">
+      <div class="section__header">
+        <h2 id="contact-heading">Let's Collaborate</h2>
+        <p>I'm open to consulting, full-time roles, and creative partnerships.</p>
+      </div>
+      <div class="contact__layout" data-glass>
+        <form class="contact__form" action="https://formspree.io/f/{your-id}" method="POST">
+          <div class="form-field">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="Jane Doe" required>
+          </div>
+          <div class="form-field">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="_replyto" placeholder="you@example.com" required>
+          </div>
+          <div class="form-field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="4" placeholder="Tell me about your project" required></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit">Send Message</button>
+        </form>
+        <div class="contact__aside">
+          <p class="contact__intro">
+            Whether you're building a new product or evolving an existing experience, I'm excited to help bring the vision to life.
+          </p>
+          <ul class="contact__links">
+            <li><a href="mailto:virenhirpara@example.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/virenhirpara" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/viru185" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://twitter.com/virenhirpara" target="_blank" rel="noopener">X (Twitter)</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <!-- contact me -->
-  <section class="contact-section section-max">
-    <h1>
-      this is contact me section.
-    </h1>
-  </section>
-  <!-- contact me finish -->
+  <footer class="site-footer">
+    <p>&copy; <span data-current-year></span> Viren Hirpara. Crafted with care.</p>
+  </footer>
 
+  <script src="src/script.js" type="module"></script>
 </body>
 
 </html>

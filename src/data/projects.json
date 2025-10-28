@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Pulse Analytics Dashboard",
+    "description": "A modular analytics platform delivering real-time insights for SaaS operators with multi-tenant theming.",
+    "tech": ["React", "TypeScript", "Tailwind", "D3.js"],
+    "source": "https://github.com/viru185/pulse-analytics",
+    "deployment": "https://pulse-analytics.app",
+    "visibility": "public",
+    "image": null,
+    "tags": ["SaaS", "Data Viz"]
+  },
+  {
+    "name": "Stride Mobile Banking",
+    "description": "Responsive banking web app with biometric authentication flows and reusable design system components.",
+    "tech": ["Next.js", "React Query", "Styled Components", "Jest"],
+    "source": "",
+    "deployment": "https://stride-banking.com",
+    "visibility": "private",
+    "image": null,
+    "tags": ["Fintech", "Design Systems"]
+  },
+  {
+    "name": "Mercury Labs Marketing Site",
+    "description": "High-converting marketing site with A/B experimentation hooks and CMS-driven content blocks.",
+    "tech": ["Astro", "Contentful", "SCSS", "Netlify"],
+    "source": "https://github.com/viru185/mercury-marketing",
+    "deployment": "https://mercurylabs.studio",
+    "visibility": "public",
+    "image": null,
+    "tags": ["Jamstack", "Growth"]
+  },
+  {
+    "name": "OpsPilot Automation Suite",
+    "description": "Internal tool to orchestrate CI/CD workflows, monitor releases, and trigger automated rollbacks.",
+    "tech": ["Vue", "Pinia", "Vite", "Node.js"],
+    "source": "",
+    "deployment": "",
+    "visibility": "private",
+    "image": null,
+    "tags": ["Internal Tools", "Automation"]
+  },
+  {
+    "name": "Design Token Manager",
+    "description": "Cross-platform design token pipeline syncing Figma libraries with multi-brand web components.",
+    "tech": ["Svelte", "TypeScript", "Storybook", "Chromatic"],
+    "source": "https://github.com/viru185/design-token-manager",
+    "deployment": "",
+    "visibility": "public",
+    "image": null,
+    "tags": ["Design Systems", "Tooling"]
+  },
+  {
+    "name": "CareSync Telehealth",
+    "description": "Telehealth portal balancing HIPAA compliance with a fast, accessible patient experience.",
+    "tech": ["Angular", "RxJS", "NgRx", "Firebase"],
+    "source": "",
+    "deployment": "https://caresync.health",
+    "visibility": "private",
+    "image": null,
+    "tags": ["Healthcare", "Accessibility"]
+  }
+]
