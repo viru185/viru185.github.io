@@ -10,11 +10,28 @@
 </head>
 
 <body>
+  <div id="site-loader" class="loader" aria-hidden="true">
+    <div class="loader__orb"></div>
+    <div class="loader__ring"></div>
+    <span class="sr-only">Loading portfolio...</span>
+  </div>
   <header class="site-header" data-glass>
     <div class="site-header__inner">
       <a class="brand" href="#home" aria-label="Navigate to home">
-        <span class="brand__accent"></span>
-        <span class="brand__text">Viren Hirpara</span>
+        <svg class="brand__logo" width="36" height="36" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="brandGradient" x1="12%" y1="8%" x2="88%" y2="92%">
+              <stop offset="0%" stop-color="#6C63FF" />
+              <stop offset="48%" stop-color="#4C95FF" />
+              <stop offset="100%" stop-color="#7FFFD4" />
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="30" fill="url(#brandGradient)" opacity="0.92" />
+          <path d="M18 24l13 20 15-32" fill="none" stroke="#0A0A0F" stroke-width="4" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M21 44h22" stroke="#0A0A0F" stroke-width="3.5" stroke-linecap="round" />
+        </svg>
+        <span class="sr-only">Viren Hirpara</span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
         <span class="sr-only">Toggle navigation</span>
@@ -39,18 +56,77 @@
     <section id="home" class="section hero" aria-labelledby="home-heading">
       <div class="hero__content" data-glass>
         <div class="hero__text">
-          <p class="hero__eyebrow">Software Engineer | Problem Solver</p>
+          <p class="hero__eyebrow">Digital Forensics &amp; Automation</p>
           <h1 id="home-heading">Viren Hirpara</h1>
-          <p class="hero__subheading">Building delightful digital experiences with robust engineering.</p>
+          <p class="hero__subheading">Uncovering digital truth and automating resilient systems.</p>
           <p class="hero__summary">
-            I design and develop performant web applications with a keen eye for detail, accessibility, and maintainability.
-            I'm passionate about crafting impactful products and collaborating with teams that ship fast and responsibly.
+            Digital forensic analyst and automation specialist blending Python tooling, evidence preservation, and
+            secure network operations.
+            I create investigations-ready workflows that keep data defensible while giving teams the insights they need
+            to respond faster.
           </p>
+          <ul class="hero__meta">
+            <li>
+              <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.5a7.5 7.5 0 0 0-7.5 7.5c0 5.1 6.4 10.8 6.7 11a1.1 1.1 0 0 0 1.6 0c.3-.2 6.7-5.9 6.7-11A7.5 7.5 0 0 0 12 2.5Zm0 10.5a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
+                  fill="currentColor" />
+              </svg>
+              <span>Bengaluru, India</span>
+            </li>
+            <li>
+              <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24">
+                <path
+                  d="M4.5 4a1.5 1.5 0 0 0-1.5 1.5v6A1.5 1.5 0 0 0 4.5 13H8l3 3v-3h3.5A1.5 1.5 0 0 0 16 11.5v-6A1.5 1.5 0 0 0 14.5 4h-10Z"
+                  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" />
+                <path d="M18.5 8.5v7a1.5 1.5 0 0 1-1.5 1.5H13l-3 3v-3H7.5" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" />
+              </svg>
+              <span>Security automation, digital forensics, data analysis</span>
+            </li>
+            <li>
+              <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24">
+                <path d="M4 5.5v10A2.5 2.5 0 0 0 6.5 18h11a2.5 2.5 0 0 0 2.5-2.5v-10" fill="none" stroke="currentColor"
+                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 3 3 8l9 5 9-5-9-5ZM3 12l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>English / Hindi / Gujarati</span>
+            </li>
+          </ul>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="assets/Viren_Hirpara_Resume_4.0.0.pdf" download>Download Resume</a>
+            <a class="btn btn--primary" href="assets/Viren_Hirpara_Resume_4.0.0.pdf" download>
+              <span>Download Resume</span>
+              <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24">
+                <path d="M12 3v14.2m0 0 4.2-4.2M12 17.2 7.8 13" fill="none" stroke="currentColor" stroke-width="1.7"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5 20h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+              </svg>
+            </a>
             <div class="hero__links">
-              <a href="#projects">View Projects</a>
-              <a href="#experience">See Experience</a>
+              <a href="#projects">
+                <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M4 12h16M12 4v16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+                <span>Explore Projects</span>
+              </a>
+              <a href="https://github.com/viru185" target="_blank" rel="noopener">
+                <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24">
+                  <path
+                    d="M12 1.8a10.2 10.2 0 0 0-3.2 19.9c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.1-1.2-1.4-1.2-1.4-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.4 2.8 3.1 2-.1-.8.2-1.3.5-1.6-2.2-.3-4.5-1.1-4.5-4.9 0-1.1.4-1.9 1-2.6-.1-.2-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.2 9.2 0 0 1 4.9 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.5.1 2.7.6.7 1 1.5 1 2.6 0 3.9-2.4 4.6-4.6 4.9.4.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A10.2 10.2 0 0 0 12 1.8Z"
+                    fill="currentColor" />
+                </svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/hirparaviren" target="_blank" rel="noopener">
+                <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24">
+                  <path
+                    d="M5 9h3v10H5zM6.5 5.5a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4ZM10 9h2.9v1.5h.1c.4-.7 1.5-1.6 3-1.6 3.2 0 3.8 1.9 3.8 4.5V19h-3v-4.3c0-1 0-2.2-1.3-2.2-1.3 0-1.5 1.1-1.5 2.1V19H10Z"
+                    fill="currentColor" />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
             </div>
           </div>
         </div>
@@ -60,151 +136,216 @@
       </div>
     </section>
 
-    <section id="projects" class="section projects" aria-labelledby="projects-heading">
+    <section id="projects" class="section section--stack projects" aria-labelledby="projects-heading">
       <div class="section__header">
         <h2 id="projects-heading">Featured Projects</h2>
-        <p>Selected work across web, product, and experimentation.</p>
+        <p>Investigations, automation tooling, and research that blend forensic rigor with engineering.</p>
       </div>
       <div class="projects__grid" data-project-grid>
         <!-- Project cards injected from JSON -->
       </div>
     </section>
 
-    <section id="experience" class="section experience" aria-labelledby="experience-heading">
+    <section id="experience" class="section section--stack experience" aria-labelledby="experience-heading">
       <div class="section__header">
         <h2 id="experience-heading">Experience</h2>
-        <p>Recent roles where I shipped, optimized, and scaled impactful products.</p>
+        <p>Delivering automation and forensic insight across operations, secure networks, and security programs.</p>
       </div>
-      <div class="timeline" data-glass>
+      <div class="timeline timeline--split" data-glass>
         <article class="timeline__item">
           <div class="timeline__meta">
-            <span class="timeline__date">Mar 2023 - Present</span>
-            <span class="timeline__location">Ahmedabad, India</span>
+            <span class="timeline__date">2023 &ndash; 2024</span>
+            <span class="timeline__location">United Kingdom</span>
           </div>
           <div class="timeline__content">
-            <h3>Senior Frontend Engineer - TechNova Labs</h3>
-            <p>Leading the front-end architecture for analytics dashboards serving 50k+ users; introduced performance budgets that reduced load times by 35%.</p>
+            <h3>Technical Operations &amp; Automation Specialist &middot; Tuma Caf&eacute;</h3>
+            <p>Built Python automations that unified POS, Wi-Fi, and analytics workflows while hardening in-store
+              infrastructure.</p>
             <ul>
-              <li>Scaled component library with accessibility baked-in.</li>
-              <li>Partnered with product to iterate rapidly on experimentation flows.</li>
+              <li>Reduced manual reconciliation time by scripting daily data pulls for finance and inventory teams.</li>
+              <li>Deployed and maintained secure wireless/VLAN segmentation for staff and guests.</li>
+              <li>Designed dashboards that surfaced actionable caf&eacute; performance insights in real time.</li>
             </ul>
           </div>
         </article>
         <article class="timeline__item">
           <div class="timeline__meta">
-            <span class="timeline__date">Sep 2020 - Feb 2023</span>
-            <span class="timeline__location">Surat, India</span>
+            <span class="timeline__date">2021 &ndash; 2022</span>
+            <span class="timeline__location">Middlesbrough, UK</span>
           </div>
           <div class="timeline__content">
-            <h3>Frontend Engineer - BrightPixel Studio</h3>
-            <p>Delivered bespoke web experiences for fintech and healthcare partners, collaborating closely with designers and backend teams.</p>
+            <h3>Digital Forensic Analyst Intern &middot; Teesside University</h3>
+            <p>Delivered incident-ready forensic analysis and security automation as part of the university cyber lab.
+            </p>
             <ul>
-              <li>Built reusable data visualization primitives across clients.</li>
-              <li>Instituted CI/CD pipelines, cutting release time by 50%.</li>
+              <li>Acquired, preserved, and documented digital evidence across mobile and endpoint sources.</li>
+              <li>Created Python tooling that accelerated repetitive triage and reporting tasks.</li>
+              <li>Profiled network vulnerabilities and authored remediation guidance for faculty stakeholders.</li>
             </ul>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="education" class="section education" aria-labelledby="education-heading">
+    <section id="education" class="section section--stack education" aria-labelledby="education-heading">
       <div class="section__header">
         <h2 id="education-heading">Education</h2>
-        <p>Grounded in computer science with hands-on, industry-aligned learning.</p>
+        <p>Academic foundation rooted in forensic science, cyber investigation, and intelligence gathering.</p>
       </div>
       <div class="timeline timeline--compact" data-glass>
         <article class="timeline__item">
           <div class="timeline__meta">
-            <span class="timeline__date">2016 - 2020</span>
-            <span class="timeline__location">Rajkot, India</span>
+            <span class="timeline__date">Sep 2019 &ndash; Aug 2021</span>
+            <span class="timeline__location">Middlesbrough, UK</span>
           </div>
           <div class="timeline__content">
-            <h3>Bachelor of Engineering - Computer Science</h3>
-            <p>At Marwadi University - Graduated with 8.7 CGPA.</p>
+            <h3>Master&rsquo;s in Digital Forensic &amp; Cyber Investigation</h3>
+            <p>Teesside University &middot; Awarded 180/180 distinction.</p>
             <ul>
-              <li>Led the university coding club and organized 5+ hackathons.</li>
-              <li>Capstone project on intelligent DevOps automation.</li>
+              <li>Specialized in forensic computing, mobile forensics, and intelligence-led investigations.</li>
+              <li>Applied legal frameworks and forensic Python tooling to high fidelity casework.</li>
             </ul>
           </div>
         </article>
         <article class="timeline__item">
           <div class="timeline__meta">
-            <span class="timeline__date">2014 - 2016</span>
-            <span class="timeline__location">Surat, India</span>
+            <span class="timeline__date">Apr 2015 &ndash; Mar 2018</span>
+            <span class="timeline__location">Junagadh, India</span>
           </div>
           <div class="timeline__content">
-            <h3>Higher Secondary - Science</h3>
-            <p>S.D. Jain Modern School - 92% overall with distinction in Math.</p>
+            <h3>Bachelor&rsquo;s in Forensic Science</h3>
+            <p>Bahauddin Science College &middot; Graduated 7.47/10.</p>
             <ul>
-              <li>Represented school at the national robotics challenge.</li>
-              <li>Contributed to tech magazine on innovation trends.</li>
+              <li>Focused on crime scene investigation, evidence handling, and forensic document analysis.</li>
+              <li>Completed research on advanced investigative methodologies for complex casework.</li>
             </ul>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="about" class="section about" aria-labelledby="about-heading">
+    <section id="about" class="section section--stack about" aria-labelledby="about-heading">
       <div class="section__header">
         <h2 id="about-heading">About Me</h2>
-        <p>Engineer, mentor, and lifelong learner curious about how humans interact with technology.</p>
+        <p>Investigator, builder, and lifelong learner exploring how automation can accelerate trustworthy security.</p>
       </div>
       <div class="about__content" data-glass>
         <p>
-          I enjoy solving complex UX and performance challenges across the stack, pairing human-centered design with reliable engineering.
-          Outside of coding, you'll find me mentoring early-career developers, exploring interface micro-interactions, and contributing to open-source tooling.
+          My path combines forensic science, cyber investigations, and Python engineering. I enjoy transforming
+          fragmented, manual processes into scripted workflows that keep evidence intact and surface the right
+          intelligence for responders.
         </p>
         <p>
-          I'm energized by fast-moving teams that care deeply about craft, clarity, and user empathy. Let's build something remarkable together.
+          Whether I am dissecting a compromised endpoint or wiring analytics for a caf&eacute;, the goal is the same:
+          sharpen clarity, automate the repeatable, and help people act with confidence. I stay active in open source,
+          continuing education, and digital forensics communities.
         </p>
         <div class="about__highlights">
           <article>
-            <h3>Craft</h3>
-            <p>Systems thinking to design scalable component architectures that stay delightful under pressure.</p>
+            <h3>Forensic Craft</h3>
+            <p>Skilled in Autopsy, FTK Imager, EnCase, and Wireshark for defensible evidence handling.</p>
           </article>
           <article>
-            <h3>Leadership</h3>
-            <p>Mentored cross-functional squads and led discovery workshops to align on outcomes that matter.</p>
+            <h3>Automation</h3>
+            <p>Python-centric tooling for scrapers, data pipelines, and operational dashboards.</p>
           </article>
           <article>
-            <h3>Community</h3>
-            <p>Speaker at local meetups on performance optimization and design systems; active OSS contributor.</p>
+            <h3>People</h3>
+            <p>Collaborative communicator who enjoys translating investigations for both technical and non-technical
+              teams.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section contact" aria-labelledby="contact-heading">
+    <section id="contact" class="section section--stack contact" aria-labelledby="contact-heading">
       <div class="section__header">
         <h2 id="contact-heading">Let's Collaborate</h2>
-        <p>I'm open to consulting, full-time roles, and creative partnerships.</p>
+        <p>Open to collaborations in digital forensics, cybersecurity, and Python automation.</p>
       </div>
       <div class="contact__layout" data-glass>
-        <form class="contact__form" action="https://formspree.io/f/{your-id}" method="POST">
+        <form class="contact__form contact-form" action="https://formspree.io/f/meolyypd" method="post">
           <div class="form-field">
             <label for="contact-name">Name</label>
             <input type="text" id="contact-name" name="name" placeholder="Jane Doe" required>
           </div>
           <div class="form-field">
             <label for="contact-email">Email</label>
-            <input type="email" id="contact-email" name="_replyto" placeholder="you@example.com" required>
+            <input type="email" id="contact-email" name="email" placeholder="you@example.com" required>
           </div>
           <div class="form-field">
             <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" rows="4" placeholder="Tell me about your project" required></textarea>
+            <textarea id="contact-message" name="message" rows="4" placeholder="Tell me about your project"
+              required></textarea>
           </div>
-          <button class="btn btn--primary" type="submit">Send Message</button>
+          <button class="btn btn--primary submit-btn" type="submit">
+            <span>Send Message</span>
+            <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24">
+              <path d="M4 4.5 20 12 4 19.5 8.5 12 4 4.5Z" fill="currentColor" />
+            </svg>
+          </button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
         <div class="contact__aside">
-          <p class="contact__intro">
-            Whether you're building a new product or evolving an existing experience, I'm excited to help bring the vision to life.
-          </p>
+          <div class="contact__intro">
+            <p>
+              Share your challenge, investigation, or automation goal and I will reply within two business days. I am
+              currently based in Bengaluru and available for remote or hybrid engagements.
+            </p>
+          </div>
           <ul class="contact__links">
-            <li><a href="mailto:virenhirpara@example.com">Email</a></li>
-            <li><a href="https://www.linkedin.com/in/virenhirpara" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://github.com/viru185" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://twitter.com/virenhirpara" target="_blank" rel="noopener">X (Twitter)</a></li>
+            <li>
+              <a href="mailto:viren.hirpara.career@gmail.com">
+                <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24">
+                  <path
+                    d="M4.5 6h15a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 19.5 18h-15A1.5 1.5 0 0 1 3 16.5v-9A1.5 1.5 0 0 1 4.5 6Z"
+                    fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="m4 7 8 5 8-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+                <span>Email</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/hirparaviren" target="_blank" rel="noopener">
+                <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24">
+                  <path
+                    d="M5 9h3v10H5zM6.5 5.5a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4ZM10 9h2.9v1.5h.1c.4-.7 1.5-1.6 3-1.6 3.2 0 3.8 1.9 3.8 4.5V19h-3v-4.3c0-1 0-2.2-1.3-2.2-1.3 0-1.5 1.1-1.5 2.1V19H10Z"
+                    fill="currentColor" />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/viru185" target="_blank" rel="noopener">
+                <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24">
+                  <path
+                    d="M12 1.8a10.2 10.2 0 0 0-3.2 19.9c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.1-1.2-1.4-1.2-1.4-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.4 2.8 3.1 2-.1-.8.2-1.3.5-1.6-2.2-.3-4.5-1.1-4.5-4.9 0-1.1.4-1.9 1-2.6-.1-.2-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.2 9.2 0 0 1 4.9 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.5.1 2.7.6.7 1 1.5 1 2.6 0 3.9-2.4 4.6-4.6 4.9.4.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A10.2 10.2 0 0 0 12 1.8Z"
+                    fill="currentColor" />
+                  <span>GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/virenhirpara" target="_blank" rel="noopener">
+                <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24">
+                  <path d="M4 4h3.3l4.4 6.1L15.8 4H20l-6.1 8.5L20 20h-3.3l-4.6-6.4L8.2 20H4l6-8.4Z"
+                    fill="currentColor" />
+                </svg>
+                <span>X (Twitter)</span>
+              </a>
+            </li>
           </ul>
+          <div class="contact__details">
+            <div>
+              <span class="contact__label">Phone</span>
+              <a href="tel:+918980336696">+91 89803 36696</a>
+            </div>
+            <div>
+              <span class="contact__label">Availability</span>
+              <span>Remote / Hybrid / On-site</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
