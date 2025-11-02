@@ -65,7 +65,7 @@ const createProjectCard = (project) => {
         badgeIcon.setAttribute("focusable", "false");
         badgeIcon.setAttribute("width", "14");
         badgeIcon.setAttribute("height", "14");
-        badgeIcon.setAttribute("viewBox", "0 0 24 24");
+        badgeIcon.setAttribute("viewBox", "0 0 16 16");
 
         const badgePath = document.createElementNS(
             "http://www.w3.org/2000/svg",
@@ -74,12 +74,12 @@ const createProjectCard = (project) => {
         if (project.visibility === "public") {
             badgePath.setAttribute(
                 "d",
-                "M12 2.5A9.5 9.5 0 1 0 21.5 12 9.5 9.5 0 0 0 12 2.5Zm0 2a7.4 7.4 0 0 1 6.9 4.7H12a.8.8 0 0 0-.7.4l-2.7 4.8-1.2-2.4a.8.8 0 0 0-1.4.7l1.9 3.7a.8.8 0 0 0 1.4 0l3.1-5.7h7.5A7.5 7.5 0 1 1 12 4.5Z"
+                "M8 0c1.07 0 2.041.42 2.759 1.104l.14.14.062.08a.5.5 0 0 1-.71.675l-.076-.066-.216-.205A3 3 0 0 0 5 4v2h6.5A2.5 2.5 0 0 1 14 8.5v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4M4.5 7A1.5 1.5 0 0 0 3 8.5v5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 11.5 7z"
             );
         } else {
             badgePath.setAttribute(
                 "d",
-                "M5 5.5a2.5 2.5 0 0 1 2.5-2.5h9A2.5 2.5 0 0 1 19 5.5V9h-1.5V5.5A1 1 0 0 0 16.5 4.5h-9a1 1 0 0 0-1 1V18a1 1 0 0 0 1 1h5.9V20.5H7.5A2.5 2.5 0 0 1 5 18Z"
+                "M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4M4.5 7A1.5 1.5 0 0 0 3 8.5v5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 11.5 7zM8 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3"
             );
         }
         badgePath.setAttribute("fill", "currentColor");

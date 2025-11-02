@@ -768,6 +768,7 @@ a:focus-visible {
     font-weight: 600;
     font-size: 0.7rem;
     letter-spacing: 0.12em;
+    margin-top: 0.17rem;
     text-transform: uppercase;
 }
 
