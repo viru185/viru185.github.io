@@ -57,14 +57,20 @@ const createProjectCard = (project) => {
         badge.className = "project-card__badge";
         badge.dataset.variant = project.visibility;
 
-        const badgeIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        const badgeIcon = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg"
+        );
         badgeIcon.setAttribute("aria-hidden", "true");
         badgeIcon.setAttribute("focusable", "false");
         badgeIcon.setAttribute("width", "14");
         badgeIcon.setAttribute("height", "14");
         badgeIcon.setAttribute("viewBox", "0 0 24 24");
 
-        const badgePath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        const badgePath = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "path"
+        );
         if (project.visibility === "public") {
             badgePath.setAttribute(
                 "d",
@@ -80,7 +86,8 @@ const createProjectCard = (project) => {
         badgeIcon.appendChild(badgePath);
 
         const badgeLabel = document.createElement("span");
-        badgeLabel.textContent = project.visibility === "public" ? "Public" : "Private";
+        badgeLabel.textContent =
+            project.visibility === "public" ? "Public" : "Private";
 
         badge.append(badgeIcon, badgeLabel);
         header.appendChild(badge);
@@ -371,7 +378,9 @@ const handleReducedMotionChange = (event) => {
     if (event.matches) {
         document
             .querySelectorAll(".heat-text")
-            .forEach((element) => element.style.setProperty("--heat-strength", "0"));
+            .forEach((element) =>
+                element.style.setProperty("--heat-strength", "0")
+            );
         toggleLoader(false);
         loader?.remove();
     }
@@ -382,4 +391,3 @@ if (typeof prefersReducedMotion.addEventListener === "function") {
 } else if (typeof prefersReducedMotion.addListener === "function") {
     prefersReducedMotion.addListener(handleReducedMotionChange);
 }
-
