@@ -1,5 +1,15 @@
 ﻿[
     {
+        "name": "FreezeMoment portfolio",
+        "description": "Responsive website I built for my friend — my frontend learning project using HTML, CSS & JavaScript.",
+        "tech": ["HTML", "CSS", "JavaScript"],
+        "source": "",
+        "deployment": "https://www.freezemoment.co.uk/",
+        "visibility": "private",
+        "image": "assets/project_img/www.freezemoment.co.uk.png",
+        "tags": ["FrontEnd", "Portfolio"]
+    },
+    {
         "name": "ChameleonResume",
         "description": "AI-powered resume optimizer that tailors bullet points to specific job descriptions and scores keyword coverage.",
         "tech": ["Python", "Flask", "OpenAI", "Docker"],

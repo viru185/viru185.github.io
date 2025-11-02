@@ -80,7 +80,7 @@ const createProjectCard = (project) => {
         badgeIcon.appendChild(badgePath);
 
         const badgeLabel = document.createElement("span");
-        badgeLabel.textContent = project.visibility === "public" ? "Open Source" : "Client Work";
+        badgeLabel.textContent = project.visibility === "public" ? "Public" : "Private";
 
         badge.append(badgeIcon, badgeLabel);
         header.appendChild(badge);
@@ -88,22 +88,8 @@ const createProjectCard = (project) => {
 
     card.appendChild(header);
 
-    if (project.image) {
-        const figure = document.createElement("figure");
-        figure.className = "project-card__image";
-
-        const img = document.createElement("img");
-        img.src = project.image;
-        img.alt = `${project.name} preview`;
-        img.loading = "lazy";
-        img.decoding = "async";
-        img.addEventListener("error", () => {
-            img.remove();
-        });
-
-        figure.appendChild(img);
-        card.appendChild(figure);
-    }
+    const media = createProjectMedia(project);
+    card.appendChild(media);
 
     const description = document.createElement("p");
     description.className = "project-card__description";
@@ -163,6 +149,36 @@ const createLink = (href, label) => {
     anchor.rel = "noopener";
     anchor.textContent = label;
     return anchor;
+};
+
+const createProjectMedia = (project) => {
+    const figure = document.createElement("figure");
+    figure.className = "project-card__image";
+
+    if (project.image) {
+        const img = document.createElement("img");
+        img.src = project.image;
+        img.alt = `${project.name} preview`;
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.addEventListener("error", () => {
+            img.remove();
+            figure.appendChild(createProjectPlaceholder());
+        });
+
+        figure.appendChild(img);
+        return figure;
+    }
+
+    figure.appendChild(createProjectPlaceholder());
+    return figure;
+};
+
+const createProjectPlaceholder = () => {
+    const placeholder = document.createElement("div");
+    placeholder.className = "project-card__placeholder";
+    placeholder.textContent = "Preview coming soon";
+    return placeholder;
 };
 
 const renderProjects = async () => {
@@ -283,14 +299,20 @@ const hydrateHeatText = () => {
             element.style.setProperty("--heat-x", `${relativeX}%`);
             element.style.setProperty("--heat-y", `${relativeY}%`);
 
-            const shiftX = ((relativeX - 50) / 6).toFixed(2);
-            const shiftY = ((relativeY - 50) / 6).toFixed(2);
-            element.style.setProperty("--heat-shift-x", `${shiftX}px`);
-            element.style.setProperty("--heat-shift-y", `${shiftY}px`);
-            element.style.setProperty("--heat-strength", "1");
+            const distance = Math.hypot(relativeX - 50, relativeY - 50);
+            const intensity = Math.max(0.2, 1 - Math.min(distance / 70, 1));
+            element.style.setProperty("--heat-strength", intensity.toFixed(2));
         });
 
         element.addEventListener("pointerleave", () => {
+            element.style.setProperty("--heat-strength", "0");
+        });
+
+        element.addEventListener("pointerout", () => {
+            element.style.setProperty("--heat-strength", "0");
+        });
+
+        element.addEventListener("blur", () => {
             element.style.setProperty("--heat-strength", "0");
         });
     });
@@ -360,3 +382,4 @@ if (typeof prefersReducedMotion.addEventListener === "function") {
 } else if (typeof prefersReducedMotion.addListener === "function") {
     prefersReducedMotion.addListener(handleReducedMotionChange);
 }
+
