@@ -11,10 +11,27 @@
 
 <body>
   <div id="site-loader" class="loader" aria-hidden="true">
-    <div class="loader__orb"></div>
-    <div class="loader__ring"></div>
+    <div class="loader__canvas">
+      <div class="loader__core"></div>
+      <div class="loader__halo loader__halo--one"></div>
+      <div class="loader__halo loader__halo--two"></div>
+      <div class="loader__halo loader__halo--three"></div>
+      <div class="loader__particle loader__particle--one"></div>
+      <div class="loader__particle loader__particle--two"></div>
+      <div class="loader__particle loader__particle--three"></div>
+    </div>
+    <p class="loader__caption heat-text">Initializing evidence trail</p>
     <span class="sr-only">Loading portfolio...</span>
   </div>
+  <svg class="heat-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="heat-distortion">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="8" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R"
+          yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
   <header class="site-header" data-glass>
     <div class="site-header__inner">
       <a class="brand" href="#home" aria-label="Navigate to home">
@@ -57,8 +74,8 @@
       <div class="hero__content" data-glass>
         <div class="hero__text">
           <p class="hero__eyebrow">Digital Forensics &amp; Automation</p>
-          <h1 id="home-heading">Viren Hirpara</h1>
-          <p class="hero__subheading">Uncovering digital truth and automating resilient systems.</p>
+          <h1 id="home-heading" class="heat-text">Viren Hirpara</h1>
+          <p class="hero__subheading heat-text">Uncovering digital truth and automating resilient systems.</p>
           <p class="hero__summary">
             Digital forensic analyst and automation specialist blending Python tooling, evidence preservation, and
             secure network operations.
@@ -69,7 +86,7 @@
             <li>
               <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24">
                 <path
-                  d="M12 2.5a7.5 7.5 0 0 0-7.5 7.5c0 5.1 6.4 10.8 6.7 11a1.1 1.1 0 0 0 1.6 0c.3-.2 6.7-5.9 6.7-11A7.5 7.5 0 0 0 12 2.5Zm0 10.5a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
+                  d="M12 2.3a7.7 7.7 0 0 0-7.7 7.7c0 5.3 6.1 10.9 7 11.7a1 1 0 0 0 1.4 0c.9-.8 7-6.4 7-11.7A7.7 7.7 0 0 0 12 2.3Zm0 10.2a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2Z"
                   fill="currentColor" />
               </svg>
               <span>Bengaluru, India</span>
@@ -77,19 +94,16 @@
             <li>
               <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24">
                 <path
-                  d="M4.5 4a1.5 1.5 0 0 0-1.5 1.5v6A1.5 1.5 0 0 0 4.5 13H8l3 3v-3h3.5A1.5 1.5 0 0 0 16 11.5v-6A1.5 1.5 0 0 0 14.5 4h-10Z"
-                  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" />
-                <path d="M18.5 8.5v7a1.5 1.5 0 0 1-1.5 1.5H13l-3 3v-3H7.5" fill="none" stroke="currentColor"
-                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" />
+                  d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v5.2a2.5 2.5 0 0 1-2.5 2.5H12l-3.8 3.8a.6.6 0 0 1-1-.4v-3.4H6.5A2.5 2.5 0 0 1 4 11.7Z"
+                  fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
               <span>Security automation, digital forensics, data analysis</span>
             </li>
             <li>
               <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24">
-                <path d="M4 5.5v10A2.5 2.5 0 0 0 6.5 18h11a2.5 2.5 0 0 0 2.5-2.5v-10" fill="none" stroke="currentColor"
-                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M12 3 3 8l9 5 9-5-9-5ZM3 12l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M12 3.2a8.8 8.8 0 1 0 0 17.6 8.8 8.8 0 0 0 0-17.6ZM5.9 12a6.1 6.1 0 0 1 0-1.1h3.5a20 20 0 0 0 0 1.1Zm.9 3.3h2.7A18.1 18.1 0 0 0 9.6 18a6.2 6.2 0 0 1-2.8-2.7Zm2.7-6.6H6.8a6.2 6.2 0 0 1 2.8-2.7 18.1 18.1 0 0 0-.1 2.7Zm2.4 8.6c-.3-.5-.6-1.6-.7-3.2h1.4c0 1.6-.3 2.7-.7 3.2Zm-.7-4.8c0-1.6.3-2.7.7-3.2.3.5.6 1.6.7 3.2Zm3.6-3.8A18.1 18.1 0 0 0 14.4 12h2.7a6.2 6.2 0 0 1-2.7-2.7Zm2.7 6.6h-2.7a18.1 18.1 0 0 0 .1 2.7 6.2 6.2 0 0 1 2.6-2.7Zm-2.6-8a18 18 0 0 0-.2-2.7 6.2 6.2 0 0 1 2.8 2.7Z"
+                  fill="currentColor" />
               </svg>
               <span>English / Hindi / Gujarati</span>
             </li>
@@ -138,7 +152,7 @@
 
     <section id="projects" class="section section--stack projects" aria-labelledby="projects-heading">
       <div class="section__header">
-        <h2 id="projects-heading">Featured Projects</h2>
+        <h2 id="projects-heading" class="heat-text">Featured Projects</h2>
         <p>Investigations, automation tooling, and research that blend forensic rigor with engineering.</p>
       </div>
       <div class="projects__grid" data-project-grid>
@@ -148,10 +162,10 @@
 
     <section id="experience" class="section section--stack experience" aria-labelledby="experience-heading">
       <div class="section__header">
-        <h2 id="experience-heading">Experience</h2>
+        <h2 id="experience-heading" class="heat-text">Experience</h2>
         <p>Delivering automation and forensic insight across operations, secure networks, and security programs.</p>
       </div>
-      <div class="timeline timeline--split" data-glass>
+      <div class="timeline" data-glass>
         <article class="timeline__item">
           <div class="timeline__meta">
             <span class="timeline__date">2023 &ndash; 2024</span>
@@ -189,7 +203,7 @@
 
     <section id="education" class="section section--stack education" aria-labelledby="education-heading">
       <div class="section__header">
-        <h2 id="education-heading">Education</h2>
+        <h2 id="education-heading" class="heat-text">Education</h2>
         <p>Academic foundation rooted in forensic science, cyber investigation, and intelligence gathering.</p>
       </div>
       <div class="timeline timeline--compact" data-glass>
@@ -226,7 +240,7 @@
 
     <section id="about" class="section section--stack about" aria-labelledby="about-heading">
       <div class="section__header">
-        <h2 id="about-heading">About Me</h2>
+        <h2 id="about-heading" class="heat-text">About Me</h2>
         <p>Investigator, builder, and lifelong learner exploring how automation can accelerate trustworthy security.</p>
       </div>
       <div class="about__content" data-glass>
@@ -260,7 +274,7 @@
 
     <section id="contact" class="section section--stack contact" aria-labelledby="contact-heading">
       <div class="section__header">
-        <h2 id="contact-heading">Let's Collaborate</h2>
+        <h2 id="contact-heading" class="heat-text">Let's Collaborate</h2>
         <p>Open to collaborations in digital forensics, cybersecurity, and Python automation.</p>
       </div>
       <div class="contact__layout" data-glass>
@@ -338,12 +352,8 @@
           </ul>
           <div class="contact__details">
             <div>
-              <span class="contact__label">Phone</span>
-              <a href="tel:+918980336696">+91 89803 36696</a>
-            </div>
-            <div>
               <span class="contact__label">Availability</span>
-              <span>Remote / Hybrid / On-site</span>
+              <span>Remote / Hybrid / On-site (India &amp; UK)</span>
             </div>
           </div>
         </div>

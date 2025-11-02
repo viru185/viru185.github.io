@@ -7,7 +7,8 @@ const loader = document.getElementById("site-loader");
 const prefersReducedMotion =
     typeof window.matchMedia === "function"
         ? window.matchMedia("(prefers-reduced-motion: reduce)")
-        : { matches: false };
+        : { matches: false, addEventListener: null, addListener: null };
+const HEAT_BOUND_ATTR = "data-heat-bound";
 
 let ticking = false;
 
@@ -43,16 +44,49 @@ const createProjectCard = (project) => {
     const card = document.createElement("article");
     card.className = "project-card";
 
-    const badge = document.createElement("span");
-    badge.className = "project-card__badge";
-    badge.textContent =
-        project.visibility === "public" ? "Open Source" : "Client Project";
-    card.appendChild(badge);
+    const header = document.createElement("div");
+    header.className = "project-card__header";
 
     const title = document.createElement("h3");
-    title.className = "project-card__title";
+    title.className = "project-card__title heat-text";
     title.textContent = project.name;
-    card.appendChild(title);
+    header.appendChild(title);
+
+    if (project.visibility) {
+        const badge = document.createElement("span");
+        badge.className = "project-card__badge";
+        badge.dataset.variant = project.visibility;
+
+        const badgeIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        badgeIcon.setAttribute("aria-hidden", "true");
+        badgeIcon.setAttribute("focusable", "false");
+        badgeIcon.setAttribute("width", "14");
+        badgeIcon.setAttribute("height", "14");
+        badgeIcon.setAttribute("viewBox", "0 0 24 24");
+
+        const badgePath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        if (project.visibility === "public") {
+            badgePath.setAttribute(
+                "d",
+                "M12 2.5A9.5 9.5 0 1 0 21.5 12 9.5 9.5 0 0 0 12 2.5Zm0 2a7.4 7.4 0 0 1 6.9 4.7H12a.8.8 0 0 0-.7.4l-2.7 4.8-1.2-2.4a.8.8 0 0 0-1.4.7l1.9 3.7a.8.8 0 0 0 1.4 0l3.1-5.7h7.5A7.5 7.5 0 1 1 12 4.5Z"
+            );
+        } else {
+            badgePath.setAttribute(
+                "d",
+                "M5 5.5a2.5 2.5 0 0 1 2.5-2.5h9A2.5 2.5 0 0 1 19 5.5V9h-1.5V5.5A1 1 0 0 0 16.5 4.5h-9a1 1 0 0 0-1 1V18a1 1 0 0 0 1 1h5.9V20.5H7.5A2.5 2.5 0 0 1 5 18Z"
+            );
+        }
+        badgePath.setAttribute("fill", "currentColor");
+        badgeIcon.appendChild(badgePath);
+
+        const badgeLabel = document.createElement("span");
+        badgeLabel.textContent = project.visibility === "public" ? "Open Source" : "Client Work";
+
+        badge.append(badgeIcon, badgeLabel);
+        header.appendChild(badge);
+    }
+
+    card.appendChild(header);
 
     if (project.image) {
         const figure = document.createElement("figure");
@@ -65,15 +99,9 @@ const createProjectCard = (project) => {
         img.decoding = "async";
         img.addEventListener("error", () => {
             img.remove();
-            figure.appendChild(createPlaceholder());
         });
 
         figure.appendChild(img);
-        card.appendChild(figure);
-    } else {
-        const figure = document.createElement("figure");
-        figure.className = "project-card__image";
-        figure.appendChild(createPlaceholder());
         card.appendChild(figure);
     }
 
@@ -93,26 +121,6 @@ const createProjectCard = (project) => {
         card.appendChild(techList);
     }
 
-    const links = document.createElement("div");
-    links.className = "project-card__links";
-    if (project.deployment) {
-        links.appendChild(createLink(project.deployment, "Live Demo"));
-    }
-    if (project.source) {
-        links.appendChild(createLink(project.source, "Source Code"));
-    } else if (project.visibility === "private") {
-        const note = document.createElement("span");
-        note.textContent = "Source unavailable";
-        note.setAttribute(
-            "aria-label",
-            `${project.name} is a private repository`
-        );
-        links.appendChild(note);
-    }
-    if (links.childElementCount) {
-        card.appendChild(links);
-    }
-
     if (project.tags?.length) {
         const tags = document.createElement("div");
         tags.className = "project-card__tags";
@@ -125,6 +133,26 @@ const createProjectCard = (project) => {
         card.appendChild(tags);
     }
 
+    const links = document.createElement("div");
+    links.className = "project-card__links";
+    if (project.deployment) {
+        links.appendChild(createLink(project.deployment, "Live Demo"));
+    }
+    if (project.source) {
+        links.appendChild(createLink(project.source, "Source Code"));
+    } else if (project.visibility === "private") {
+        const note = document.createElement("span");
+        note.textContent = "Private delivery";
+        note.setAttribute(
+            "aria-label",
+            `${project.name} repository is private`
+        );
+        links.appendChild(note);
+    }
+    if (links.childElementCount) {
+        card.appendChild(links);
+    }
+
     return card;
 };
 
@@ -135,13 +163,6 @@ const createLink = (href, label) => {
     anchor.rel = "noopener";
     anchor.textContent = label;
     return anchor;
-};
-
-const createPlaceholder = () => {
-    const placeholder = document.createElement("div");
-    placeholder.className = "project-card__placeholder";
-    placeholder.textContent = "Preview coming soon";
-    return placeholder;
 };
 
 const renderProjects = async () => {
@@ -159,6 +180,7 @@ const renderProjects = async () => {
             const card = createProjectCard(project);
             projectGrid.appendChild(card);
         });
+        hydrateHeatText();
     } catch (error) {
         const message = document.createElement("p");
         message.className = "projects__error";
@@ -188,7 +210,7 @@ const initContactForm = () => {
         statusTarget.dataset.tone = tone;
     };
 
-    contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", async (event) => {
         event.preventDefault();
         if (!contactForm.action) return;
 
@@ -198,31 +220,38 @@ const initContactForm = () => {
         }
         setStatus("Sending...", "pending");
 
-        fetch(contactForm.action, {
-            method: contactForm.method,
-            body: new FormData(contactForm),
-            headers: { Accept: "application/json" },
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(response.statusText);
-                }
-                setStatus("Thanks — I will get back to you soon.", "success");
-                contactForm.reset();
-            })
-            .catch(() => {
-                setStatus(
-                    "Oops, something went wrong. Please email me directly.",
-                    "error"
-                );
-            })
-            .finally(() => {
-                submitButton?.classList.remove("is-loading");
-                if (submitButton) {
-                    submitButton.disabled = false;
-                }
-                window.setTimeout(() => setStatus("", "neutral"), 4000);
+        try {
+            const response = await fetch(contactForm.action, {
+                method: (contactForm.method || "POST").toUpperCase(),
+                body: new FormData(contactForm),
+                headers: { Accept: "application/json" },
             });
+
+            if (!response.ok) {
+                const data = await response.json().catch(() => null);
+                const message =
+                    data?.errors?.map((error) => error.message).join(", ") ||
+                    "Unable to send form right now. Please email me directly.";
+                throw new Error(message);
+            }
+
+            setStatus("Thanks - I will get back to you soon.", "success");
+            contactForm.reset();
+        } catch (error) {
+            console.error(error);
+            setStatus(
+                error instanceof Error
+                    ? error.message
+                    : "Oops, something went wrong. Please email me directly.",
+                "error"
+            );
+        } finally {
+            submitButton?.classList.remove("is-loading");
+            if (submitButton) {
+                submitButton.disabled = false;
+            }
+            window.setTimeout(() => setStatus("", "neutral"), 4500);
+        }
     });
 };
 
@@ -230,6 +259,41 @@ const updateCurrentYear = () => {
     if (currentYearTarget) {
         currentYearTarget.textContent = new Date().getFullYear().toString();
     }
+};
+
+const hydrateHeatText = () => {
+    const heatElements = document.querySelectorAll(".heat-text");
+    heatElements.forEach((element) => {
+        if (!element.dataset.heat) {
+            element.dataset.heat = (element.textContent || "").trim();
+        }
+        if (element.getAttribute(HEAT_BOUND_ATTR) === "true") {
+            return;
+        }
+
+        element.setAttribute(HEAT_BOUND_ATTR, "true");
+
+        element.addEventListener("pointermove", (event) => {
+            if (prefersReducedMotion.matches) return;
+            const rect = element.getBoundingClientRect();
+            if (!rect.width || !rect.height) return;
+
+            const relativeX = ((event.clientX - rect.left) / rect.width) * 100;
+            const relativeY = ((event.clientY - rect.top) / rect.height) * 100;
+            element.style.setProperty("--heat-x", `${relativeX}%`);
+            element.style.setProperty("--heat-y", `${relativeY}%`);
+
+            const shiftX = ((relativeX - 50) / 6).toFixed(2);
+            const shiftY = ((relativeY - 50) / 6).toFixed(2);
+            element.style.setProperty("--heat-shift-x", `${shiftX}px`);
+            element.style.setProperty("--heat-shift-y", `${shiftY}px`);
+            element.style.setProperty("--heat-strength", "1");
+        });
+
+        element.addEventListener("pointerleave", () => {
+            element.style.setProperty("--heat-strength", "0");
+        });
+    });
 };
 
 if (navToggle) {
@@ -260,9 +324,10 @@ window.addEventListener(
     () => {
         setHeaderState();
         if (!prefersReducedMotion.matches) {
-            window.setTimeout(() => toggleLoader(false), 300);
+            window.setTimeout(() => toggleLoader(false), 360);
         } else {
             toggleLoader(false);
+            loader?.remove();
         }
     },
     { once: true }
@@ -271,4 +336,27 @@ window.addEventListener(
 renderProjects();
 initContactForm();
 updateCurrentYear();
-toggleLoader(true);
+hydrateHeatText();
+
+if (!prefersReducedMotion.matches) {
+    toggleLoader(true);
+} else {
+    toggleLoader(false);
+    loader?.remove();
+}
+
+const handleReducedMotionChange = (event) => {
+    if (event.matches) {
+        document
+            .querySelectorAll(".heat-text")
+            .forEach((element) => element.style.setProperty("--heat-strength", "0"));
+        toggleLoader(false);
+        loader?.remove();
+    }
+};
+
+if (typeof prefersReducedMotion.addEventListener === "function") {
+    prefersReducedMotion.addEventListener("change", handleReducedMotionChange);
+} else if (typeof prefersReducedMotion.addListener === "function") {
+    prefersReducedMotion.addListener(handleReducedMotionChange);
+}

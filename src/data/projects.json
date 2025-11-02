@@ -1,7 +1,7 @@
-[
+﻿[
     {
         "name": "ChameleonResume",
-        "description": "AI-powered résumé optimizer that tailors bullet points to specific job descriptions and scores keyword coverage.",
+        "description": "AI-powered resume optimizer that tailors bullet points to specific job descriptions and scores keyword coverage.",
         "tech": ["Python", "Flask", "OpenAI", "Docker"],
         "source": "https://github.com/viru185/ChameleonResume",
         "deployment": "",
@@ -11,7 +11,7 @@
     },
     {
         "name": "Python Automation Toolkit",
-        "description": "Operational automation scripts for POS reconciliation, Wi-Fi monitoring, and analytics dashboards deployed at Tuma Café.",
+        "description": "Operational automation scripts for POS reconciliation, Wi-Fi monitoring, and analytics dashboards deployed at Tuma Cafe.",
         "tech": ["Python", "Pandas", "BeautifulSoup", "Airflow"],
         "source": "",
         "deployment": "",
