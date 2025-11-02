@@ -12,7 +12,7 @@
     {
         "name": "FreezeMoment portfolio",
         "description": "Responsive website I built for my friend — my frontend learning project using HTML, CSS & JavaScript.",
-        "tech": ["HTML", "CSS", "JavaScript"],
+        "tech": ["HTML", "CSS", "JavaScript", "GSAP"],
         "source": "",
         "deployment": "https://www.freezemoment.co.uk",
         "visibility": "private",

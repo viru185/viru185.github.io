@@ -879,8 +879,8 @@ a:focus-visible {
 }
 
 .project-card__tech svg {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     opacity: 0.85;
     pointer-events: none;
 }
