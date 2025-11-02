@@ -186,7 +186,7 @@ const createProjectCard = (project) => {
         links.appendChild(createActionLink("code", project.source, "Source Code"));
     } else if (project.visibility === "private") {
         links.appendChild(
-            createActionInfo("private", "Client delivery (confidential)")
+            createActionInfo("private", "Client delivery")
         );
     }
     if (links.childElementCount) {

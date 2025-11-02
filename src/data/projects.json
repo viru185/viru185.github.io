@@ -1,10 +1,20 @@
 ﻿[
     {
+        "name": "My portfolio",
+        "description": "This is a modern, responsive personal website project for showcasing the professional profile of my self.",
+        "tech": ["HTML", "CSS", "JavaScript"],
+        "source": "https://github.com/viru185/viru185.github.io",
+        "deployment": "https://www.virenhirpara.com",
+        "visibility": "public",
+        "image": "assets/project_img/www.virenhirpara.com.png",
+        "tags": ["FrontEnd", "Portfolio"]
+    },
+    {
         "name": "FreezeMoment portfolio",
         "description": "Responsive website I built for my friend — my frontend learning project using HTML, CSS & JavaScript.",
         "tech": ["HTML", "CSS", "JavaScript"],
         "source": "",
-        "deployment": "https://www.freezemoment.co.uk/",
+        "deployment": "https://www.freezemoment.co.uk",
         "visibility": "private",
         "image": "assets/project_img/www.freezemoment.co.uk.png",
         "tags": ["FrontEnd", "Portfolio"]
