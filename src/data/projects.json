@@ -17,6 +17,7 @@
         "deployment": "",
         "visibility": "public",
         "image": null,
+        "preview": "coming-soon",
         "tags": ["AI", "Career Tech"]
     },
     {
@@ -27,6 +28,7 @@
         "deployment": "",
         "visibility": "private",
         "image": null,
+        "preview": "unavailable",
         "tags": ["Automation", "Operations"]
     },
     {
@@ -37,6 +39,7 @@
         "deployment": "",
         "visibility": "public",
         "image": null,
+        "preview": "coming-soon",
         "tags": ["Web App", "Productivity"]
     },
     {
@@ -47,6 +50,7 @@
         "deployment": "",
         "visibility": "private",
         "image": null,
+        "preview": "unavailable",
         "tags": ["Threat Intel", "Research"]
     }
 ]
