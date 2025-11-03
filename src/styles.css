@@ -576,17 +576,135 @@ a:focus-visible {
     list-style: none;
 }
 
-.site-nav__list a {
-    transition: background var(--transition), color var(--transition);
-    border-radius: 999px;
-    padding: 0.4rem 0.7rem;
+.site-nav__list li {
+    --nav-accent: rgba(118, 123, 255, 0.28);
 }
 
-.site-nav__list a:hover,
-.site-nav__list a:focus-visible {
-    background: rgba(125, 95, 255, 0.16);
+.site-nav__list li:nth-child(2) {
+    --nav-accent: rgba(96, 206, 255, 0.32);
+}
+.site-nav__list li:nth-child(3) {
+    --nav-accent: rgba(255, 149, 236, 0.28);
+}
+.site-nav__list li:nth-child(4) {
+    --nav-accent: rgba(255, 196, 119, 0.26);
+}
+.site-nav__list li:nth-child(5) {
+    --nav-accent: rgba(156, 255, 200, 0.28);
+}
+.site-nav__list li:nth-child(6) {
+    --nav-accent: rgba(120, 170, 255, 0.3);
+}
+
+.site-nav__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    isolation: isolate;
+    padding: 0.48rem 0.9rem;
+    border-radius: 999px;
+    color: var(--text-secondary);
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.site-nav__link::before,
+.site-nav__link::after {
+    position: absolute;
+    inset: 2px;
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 360ms ease, transform 420ms var(--dropdown-ease);
+    content: "";
+}
+
+.site-nav__link::before {
+    background:
+        linear-gradient(140deg, rgba(255, 255, 255, 0.14), transparent 62%),
+        linear-gradient(120deg, var(--nav-accent), transparent 75%);
+}
+
+.site-nav__link::after {
+    inset: auto 12px 6px 12px;
+    height: 3px;
+    background: radial-gradient(60% 100% at 50% 0%, var(--nav-accent), transparent 90%);
+    transform: translateY(6px);
+}
+
+.site-nav__icon {
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            125deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.02)
+        ),
+        var(--nav-accent);
+    box-shadow: inset 0 0 0.8px rgba(255, 255, 255, 0.4),
+        0 8px 22px rgba(12, 14, 26, 0.35);
+    color: rgba(198, 205, 255, 0.88);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        color var(--transition);
+}
+
+.site-nav__icon::after {
+    position: absolute;
+    inset: -35%;
+    border-radius: 50%;
+    background: radial-gradient(
+        70% 70% at 50% 25%,
+        rgba(255, 255, 255, 0.55),
+        transparent 70%
+    );
+    opacity: 0.4;
+    filter: blur(10px);
+    content: "";
+    pointer-events: none;
+}
+
+.site-nav__icon path {
+    fill: currentColor;
+}
+
+.site-nav__label {
+    position: relative;
+    letter-spacing: 0.02em;
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus-visible {
     color: var(--text-primary);
     text-decoration: none;
+}
+
+.site-nav__link:hover::before,
+.site-nav__link:focus-visible::before {
+    opacity: 1;
+}
+
+.site-nav__link:hover::after,
+.site-nav__link:focus-visible::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.site-nav__link:hover .site-nav__icon,
+.site-nav__link:focus-visible .site-nav__icon {
+    transform: scale(1.05) translateY(-1px);
+    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5),
+        0 12px 26px rgba(20, 24, 52, 0.55);
+    color: rgba(248, 250, 255, 0.96);
 }
 
 /* Hero */
@@ -1338,9 +1456,16 @@ a:focus-visible {
 
     .site-nav,
     .site-nav__list,
-    .site-nav__list li {
+    .site-nav__list li,
+    .site-nav__link,
+    .site-nav__icon {
         transition: none !important;
         animation: none !important;
+    }
+
+    .site-nav__link::before,
+    .site-nav__link::after {
+        transition: none !important;
     }
 }
 
@@ -1490,10 +1615,10 @@ a:focus-visible {
         transition-delay: 210ms;
     }
 
-    .site-nav__list a {
+    .site-nav__link {
         display: flex;
-        align-items: center;
         width: 100%;
+        padding: 0.65rem 1rem;
     }
 
     .hero__content {
