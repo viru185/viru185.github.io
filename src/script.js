@@ -13,19 +13,21 @@ const TECH_ICON_SOURCE = "src/data/tech-icons.json";
 const PREVIEW_PLACEHOLDERS = {
     "coming-soon": {
         label: "Preview coming soon",
-        icon: '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 .1 0Zm0 2a7 7 0 1 1-7 7h2a5 5 0 1 0 5-5V5Z"/></svg>'
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>  <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/></svg>',
     },
     unavailable: {
         label: "No preview available",
-        icon: '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 4.3 4.3 3l17 17-1.3 1.3-2.6-2.6a10.4 10.4 0 0 1-5.3 1.6c-4.7 0-8.8-3-11-7.3 1-1.9 2.2-3.6 3.8-4.9L3 4.3Zm3.6 3.6A8.6 8.6 0 0 0 4 12c1.8 3.5 5 5.7 8.5 5.7 1.4 0 2.7-.4 3.9-1.1l-9.8-9.7Zm6-4.9c4.7 0 8.8 3 11 7.3a15 15 0 0 1-3.6 4.7l-1.4-1.4A8.6 8.6 0 0 0 20 12c-1.8-3.5-5-5.7-8.5-5.7-1.2 0-2.4.3-3.4.8l-1.4-1.4a10.4 10.4 0 0 1 4.9-1.7Z"/></svg>'
-    }
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7 7 0 0 0 2.79-.588M5.21 3.088A7 7 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474z"/><path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12z"/></svg>',
+    },
 };
 
 const ACTION_ICONS = {
     live: '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm1 2.2c2.1.3 3.8 2 4.1 4.1h-4.1V5.2Zm-2 0v4.1H6.9C7.2 7 8.9 5.3 11 5.2Zm-4.1 6H11v4.1c-2.1-.2-3.8-1.9-4.1-4.1Zm6 4.1V11H17c-.3 2.1-2 3.8-4.1 4.1Z"/></svg>',
-    production: '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M5.5 3A1.5 1.5 0 0 0 4 4.5V21h4v-3h8v3h4V4.5A1.5 1.5 0 0 0 18.5 3h-13Zm2.5 3h2v3h-2V6Zm4 0h2v3h-2V6ZM8 11h8v2H8v-2Zm0 4h8v2H8v-2Z"/></svg>',
+    production:
+        '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M5.5 3A1.5 1.5 0 0 0 4 4.5V21h4v-3h8v3h4V4.5A1.5 1.5 0 0 0 18.5 3h-13Zm2.5 3h2v3h-2V6Zm4 0h2v3h-2V6ZM8 11h8v2H8v-2Zm0 4h8v2H8v-2Z"/></svg>',
     code: '<svg viewBox="0 0 24 24"><path fill="currentColor" d="m8.3 5.7 1.4 1.4L6.4 12l3.3 4.9-1.4 1.4L4 12l4.3-6.3Zm7.4 0L20 12l-4.3 6.3-1.4-1.4 3.3-4.9-3.3-4.9 1.4-1.4Z"/></svg>',
-    private: '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a4 4 0 0 1 4 4v2h1.5A2.5 2.5 0 0 1 20 10.5v7A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-7A2.5 2.5 0 0 1 6.5 8H8V6a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v2h4V6a2 2 0 0 0-2-2Zm-3.5 6a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5h-7Z"/></svg>'
+    private:
+        '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a4 4 0 0 1 4 4v2h1.5A2.5 2.5 0 0 1 20 10.5v7A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-7A2.5 2.5 0 0 1 6.5 8H8V6a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v2h4V6a2 2 0 0 0-2-2Zm-3.5 6a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5h-7Z"/></svg>',
 };
 
 let techIconCache = null;
@@ -179,15 +181,19 @@ const createProjectCard = (project) => {
         const deploymentLabel =
             project.visibility === "private" ? "Production Site" : "Live Demo";
         links.appendChild(
-            createActionLink(deploymentType, project.deployment, deploymentLabel)
+            createActionLink(
+                deploymentType,
+                project.deployment,
+                deploymentLabel
+            )
         );
     }
     if (project.source) {
-        links.appendChild(createActionLink("code", project.source, "Source Code"));
-    } else if (project.visibility === "private") {
         links.appendChild(
-            createActionInfo("private", "Client delivery")
+            createActionLink("code", project.source, "Source Code")
         );
+    } else if (project.visibility === "private") {
+        links.appendChild(createActionInfo("private", "Client delivery"));
     }
     if (links.childElementCount) {
         card.appendChild(links);
