@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viren Hirpara - Personal Website</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="src/theme/dark.css" id="theme-style">
+</head>
+
+<body>
+    <div id="site-loader" class="loader" aria-hidden="true">
+        <div class="loader__canvas">
+            <div class="loader__core"></div>
+            <div class="loader__halo loader__halo--one"></div>
+            <div class="loader__halo loader__halo--two"></div>
+            <div class="loader__halo loader__halo--three"></div>
+            <div class="loader__particle loader__particle--one"></div>
+            <div class="loader__particle loader__particle--two"></div>
+            <div class="loader__particle loader__particle--three"></div>
+        </div>
+        <p class="loader__caption heat-text">Initializing evidence trail</p>
+        <span class="sr-only">Loading portfolio...</span>
+    </div>
+    <header class="site-header" data-glass>
+        <div class="site-header__inner">
+            <a class="brand" href="#home" aria-label="Navigate to home">
+                <svg class="brand__logo" width="36" height="36" viewBox="0 0 64 64" aria-hidden="true"
+                    focusable="false">
+                    <defs>
+                        <linearGradient id="brandGradient" x1="12%" y1="8%" x2="88%" y2="92%">
+                            <stop offset="0%" stop-color="#6C63FF" />
+                            <stop offset="48%" stop-color="#4C95FF" />
+                            <stop offset="100%" stop-color="#7FFFD4" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="32" cy="32" r="30" fill="url(#brandGradient)" opacity="0.92" />
+                    <path d="M18 24l13 20 15-32" fill="none" stroke="#0A0A0F" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M21 44h22" stroke="#0A0A0F" stroke-width="3.5" stroke-linecap="round" />
+                </svg>
+                <span class="sr-only">Viren Hirpara</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="nav-toggle__line"></span>
+                <span class="nav-toggle__line"></span>
+                <span class="nav-toggle__line"></span>
+            </button>
+            <nav id="primary-navigation" class="site-nav" aria-label="Primary">
+                <ul class="site-nav__list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="section hero" aria-labelledby="home-heading">
+            <div class="hero__content" data-glass>
+                <div class="hero__text">
+                    <p class="hero__eyebrow">Digital Forensics &amp; Automation</p>
+                    <h1 id="home-heading" class="heat-text">Viren Hirpara</h1>
+                    <p class="hero__subheading heat-text">Uncovering digital truth and automating resilient systems.</p>
+                    <p class="hero__summary">
+                        Digital forensic analyst and automation specialist blending Python tooling, evidence
+                        preservation, and
+                        secure network operations.
+                        I create investigations-ready workflows that keep data defensible while giving teams the
+                        insights they need
+                        to respond faster.
+                    </p>
+                    <ul class="hero__meta">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                            </svg>
+                            <span>Bengaluru, India</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-person-workspace" viewBox="0 0 16 16">
+                                <path
+                                    d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                                <path
+                                    d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.4 5.4 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2z" />
+                            </svg>
+                            <span>Security automation, digital forensics, data analysis</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-globe2" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855q-.215.403-.395.872c.705.157 1.472.257 2.282.287zM4.249 3.539q.214-.577.481-1.078a7 7 0 0 1 .597-.933A7 7 0 0 0 3.051 3.05q.544.277 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9 9 0 0 1-1.565-.667A6.96 6.96 0 0 0 1.018 7.5zm1.4-2.741a12.3 12.3 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.3 12.3 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.6 13.6 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696q.18.469.395.872c.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a7 7 0 0 1-.598-.933 9 9 0 0 1-.481-1.079 8.4 8.4 0 0 0-1.198.49 7 7 0 0 0 2.276 1.522zm-1.383-2.964A13.4 13.4 0 0 1 3.508 8.5h-2.49a6.96 6.96 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667m6.728 2.964a7 7 0 0 0 2.275-1.521 8.4 8.4 0 0 0-1.197-.49 9 9 0 0 1-.481 1.078 7 7 0 0 1-.597.933M8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855q.216-.403.395-.872A12.6 12.6 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.96 6.96 0 0 0 14.982 8.5h-2.49a13.4 13.4 0 0 1-.437 3.008M14.982 7.5a6.96 6.96 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461q.266.502.482 1.078a8.4 8.4 0 0 0 1.196-.49 7 7 0 0 0-2.275-1.52c.218.283.418.597.597.932m-.488 1.343a8 8 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z" />
+                            </svg>
+                            <span>English / Hindi / Gujarati</span>
+                        </li>
+                    </ul>
+                    <div class="hero__actions">
+                        <a class="btn btn--primary" href="assets/Viren_Hirpara_Resume_4.0.0.pdf" download>
+                            <span>Download Resume</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                class="bi bi-download" viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                                <path
+                                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                            </svg>
+                        </a>
+                        <div class="hero__links">
+                            <a href="#projects">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                    class="bi bi-laptop" viewBox="0 0 16 16">
+                                    <path
+                                        d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5" />
+                                </svg>
+                                <span>Explore Projects</span>
+                            </a>
+                            <a href="https://github.com/viru185" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                    class="bi bi-github" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                                </svg>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/hirparaviren" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                    class="bi bi-linkedin" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                                </svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__media">
+                    <img src="assets/hero_img.jpg" alt="Portrait of Viren Hirpara" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects" aria-labelledby="projects-heading">
+            <div class="section__header">
+                <h2 id="projects-heading" class="heat-text">Featured Projects</h2>
+                <p>Investigations, automation tooling, and research that blend forensic rigor with engineering.</p>
+            </div>
+            <div class="projects__grid" data-project-grid>
+                <!-- Project cards injected from JSON -->
+            </div>
+        </section>
+
+        <section id="experience" class="section experience" aria-labelledby="experience-heading">
+            <div class="section__header">
+                <h2 id="experience-heading" class="heat-text">Experience</h2>
+                <p>Delivering automation and forensic insight across operations, secure networks, and security programs.
+                </p>
+            </div>
+            <div class="timeline" data-glass>
+                <article class="timeline__item">
+                    <div class="timeline__meta">
+                        <span class="timeline__date">2023 &ndash; 2024</span>
+                        <span class="timeline__location">United Kingdom</span>
+                    </div>
+                    <div class="timeline__content">
+                        <h3>Technical Operations &amp; Automation Specialist &middot; Tuma Caf&eacute;</h3>
+                        <p>Built Python automations that unified POS, Wi-Fi, and analytics workflows while hardening
+                            in-store
+                            infrastructure.</p>
+                        <ul>
+                            <li>Reduced manual reconciliation time by scripting daily data pulls for finance and
+                                inventory teams.</li>
+                            <li>Deployed and maintained secure wireless/VLAN segmentation for staff and guests.</li>
+                            <li>Designed dashboards that surfaced actionable caf&eacute; performance insights in real
+                                time.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="timeline__item">
+                    <div class="timeline__meta">
+                        <span class="timeline__date">2021 &ndash; 2022</span>
+                        <span class="timeline__location">Middlesbrough, UK</span>
+                    </div>
+                    <div class="timeline__content">
+                        <h3>Digital Forensic Analyst Intern &middot; Teesside University</h3>
+                        <p>Delivered incident-ready forensic analysis and security automation as part of the university
+                            cyber lab.
+                        </p>
+                        <ul>
+                            <li>Acquired, preserved, and documented digital evidence across mobile and endpoint sources.
+                            </li>
+                            <li>Created Python tooling that accelerated repetitive triage and reporting tasks.</li>
+                            <li>Profiled network vulnerabilities and authored remediation guidance for faculty
+                                stakeholders.</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="education" class="section education" aria-labelledby="education-heading">
+            <div class="section__header">
+                <h2 id="education-heading" class="heat-text">Education</h2>
+                <p>Academic foundation rooted in forensic science, cyber investigation, and intelligence gathering.</p>
+            </div>
+            <div class="timeline timeline--compact" data-glass>
+                <article class="timeline__item">
+                    <div class="timeline__meta">
+                        <span class="timeline__date">Sep 2019 &ndash; Aug 2021</span>
+                        <span class="timeline__location">Middlesbrough, UK</span>
+                    </div>
+                    <div class="timeline__content">
+                        <h3>Master&rsquo;s in Digital Forensic &amp; Cyber Investigation</h3>
+                        <p>Teesside University &middot; Awarded 180/180 distinction.</p>
+                        <ul>
+                            <li>Specialized in forensic computing, mobile forensics, and intelligence-led
+                                investigations.</li>
+                            <li>Applied legal frameworks and forensic Python tooling to high fidelity casework.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="timeline__item">
+                    <div class="timeline__meta">
+                        <span class="timeline__date">Apr 2015 &ndash; Mar 2018</span>
+                        <span class="timeline__location">Junagadh, India</span>
+                    </div>
+                    <div class="timeline__content">
+                        <h3>Bachelor&rsquo;s in Forensic Science</h3>
+                        <p>Bahauddin Science College &middot; Graduated 7.47/10.</p>
+                        <ul>
+                            <li>Focused on crime scene investigation, evidence handling, and forensic document analysis.
+                            </li>
+                            <li>Completed research on advanced investigative methodologies for complex casework.</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="section about" aria-labelledby="about-heading">
+            <div class="section__header">
+                <h2 id="about-heading" class="heat-text">About Me</h2>
+                <p>Investigator, builder, and lifelong learner exploring how automation can accelerate trustworthy
+                    security.</p>
+            </div>
+            <div class="about__content" data-glass>
+                <p>
+                    My path combines forensic science, cyber investigations, and Python engineering. I enjoy
+                    transforming
+                    fragmented, manual processes into scripted workflows that keep evidence intact and surface the right
+                    intelligence for responders.
+                </p>
+                <p>
+                    Whether I am dissecting a compromised endpoint or wiring analytics for a caf&eacute;, the goal is
+                    the same:
+                    sharpen clarity, automate the repeatable, and help people act with confidence. I stay active in open
+                    source,
+                    continuing education, and digital forensics communities.
+                </p>
+                <div class="about__highlights">
+                    <article>
+                        <h3>Forensic Craft</h3>
+                        <p>Skilled in Autopsy, FTK Imager, EnCase, and Wireshark for defensible evidence handling.</p>
+                    </article>
+                    <article>
+                        <h3>Automation</h3>
+                        <p>Python-centric tooling for scrapers, data pipelines, and operational dashboards.</p>
+                    </article>
+                    <article>
+                        <h3>People</h3>
+                        <p>Collaborative communicator who enjoys translating investigations for both technical and
+                            non-technical
+                            teams.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact" aria-labelledby="contact-heading">
+            <div class="section__header">
+                <h2 id="contact-heading" class="heat-text">Let's Collaborate</h2>
+                <p>Open to collaborations in digital forensics, cybersecurity, and Python automation.</p>
+            </div>
+            <div class="contact__layout" data-glass>
+                <form class="contact__form contact-form" action="https://formspree.io/f/meolyypd" method="post">
+                    <div class="form-field">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" name="name" placeholder="Jane Doe" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="4" placeholder="Tell me about your project"
+                            required></textarea>
+                    </div>
+                    <button class="btn btn--primary submit-btn" type="submit">
+                        <span>Send Message</span>
+                        <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24">
+                            <path d="M4 4.5 20 12 4 19.5 8.5 12 4 4.5Z" fill="currentColor" />
+                        </svg>
+                    </button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
+                <div class="contact__aside">
+                    <div class="contact__intro">
+                        <p>
+                            Share your challenge, investigation, or automation goal and I will reply within two business
+                            days. I am
+                            currently based in Bengaluru and available for remote or hybrid engagements.
+                        </p>
+                    </div>
+                    <ul class="contact__links">
+                        <li>
+                            <a href="mailto:viren.hirpara.career@gmail.com">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671" />
+                                    <path
+                                        d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791" />
+                                </svg>
+                                <span>Email</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/hirparaviren" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-linkedin" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                                </svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/viru185" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-github" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                                </svg>
+                                <span>GitHub</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/hirparaviren" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-twitter-x" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                                </svg>
+                                <span>X (Twitter)</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="contact__details">
+                        <div>
+                            <span class="contact__label">Availability</span>
+                            <span>Remote / Hybrid / On-site</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span data-current-year></span> Viren Hirpara. Crafted with care.</p>
+    </footer>
+
+    <script src="src/script.js" type="module"></script>
+</body>
+
+</html>

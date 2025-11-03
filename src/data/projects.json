@@ -1,0 +1,66 @@
+﻿[
+    {
+        "name": "My portfolio",
+        "description": "This is a modern, responsive personal website project for showcasing the professional profile of my self.",
+        "tech": ["HTML", "CSS", "JavaScript"],
+        "source": "https://github.com/viru185/viru185.github.io",
+        "deployment": "https://www.virenhirpara.com",
+        "visibility": "public",
+        "image": "assets/project_img/www.virenhirpara.com.png",
+        "tags": ["FrontEnd", "Portfolio"]
+    },
+    {
+        "name": "FreezeMoment portfolio",
+        "description": "Responsive website I built for my friend — my frontend learning project using HTML, CSS & JavaScript.",
+        "tech": ["HTML", "CSS", "JavaScript", "GSAP"],
+        "source": "",
+        "deployment": "https://www.freezemoment.co.uk",
+        "visibility": "private",
+        "image": "assets/project_img/www.freezemoment.co.uk.png",
+        "tags": ["FrontEnd", "Portfolio"]
+    },
+    {
+        "name": "ChameleonResume",
+        "description": "AI-powered resume optimizer that tailors bullet points to specific job descriptions and scores keyword coverage.",
+        "tech": ["Python", "Flask", "OpenAI", "Docker"],
+        "source": "https://github.com/viru185/ChameleonResume",
+        "deployment": "",
+        "visibility": "public",
+        "image": null,
+        "preview": "coming-soon",
+        "tags": ["AI", "Career Tech"]
+    },
+    {
+        "name": "Python Automation Toolkit",
+        "description": "Operational automation scripts for POS reconciliation, Wi-Fi monitoring, and analytics dashboards deployed at Tuma Cafe.",
+        "tech": ["Python", "Pandas", "BeautifulSoup", "Airflow"],
+        "source": "",
+        "deployment": "",
+        "visibility": "private",
+        "image": null,
+        "preview": "unavailable",
+        "tags": ["Automation", "Operations"]
+    },
+    {
+        "name": "NoteApp Flask",
+        "description": "Secure note-taking web app with authentication, tagging, and full-text search backed by Flask and SQLite.",
+        "tech": ["Python", "Flask", "SQLite", "Bootstrap"],
+        "source": "https://github.com/viru185/NoteApp_flask",
+        "deployment": "",
+        "visibility": "public",
+        "image": null,
+        "preview": "coming-soon",
+        "tags": ["Web App", "Productivity"]
+    },
+    {
+        "name": "Ransomware Threat Mining",
+        "description": "Research pipeline mining Twitter for ransomware indicators to correlate threat actors, keywords, and spike volume.",
+        "tech": ["Python", "Pandas", "NLTK", "Matplotlib"],
+        "source": "",
+        "deployment": "",
+        "visibility": "private",
+        "image": null,
+        "preview": "unavailable",
+        "tags": ["Threat Intel", "Research"]
+    }
+]
