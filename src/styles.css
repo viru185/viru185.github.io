@@ -1432,16 +1432,22 @@ a:focus-visible {
     .hero__content {
         padding: 2rem;
     }
-
-    .timeline,
-    .about__content,
-    .contact__layout {
-        padding: 1.75rem;
+    .hero__actions .btn--primary {
+        width: 100%;
+    }
+    .hero__links {
+        width: 100%;
     }
 
     .hero__links a {
         justify-content: center;
         width: 100%;
+    }
+
+    .timeline,
+    .about__content,
+    .contact__layout {
+        padding: 1.75rem;
     }
 
     .contact__links a {
