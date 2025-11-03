@@ -975,7 +975,6 @@ a:focus-visible {
 }
 
 .project-card__tag::before {
-    margin-right: 0.25rem;
     content: "#";
     color: rgba(140, 200, 255, 0.65);
 }
