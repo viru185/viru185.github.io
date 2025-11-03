@@ -340,6 +340,7 @@ const initContactForm = () => {
                 method: (contactForm.method || "POST").toUpperCase(),
                 body: new FormData(contactForm),
                 headers: { Accept: "application/json" },
+                
             });
 
             if (!response.ok) {
