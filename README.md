@@ -1,106 +1,100 @@
 # viru185.github.io
 
-This is a modern, responsive personal website project for showcasing the professional profile of Viren Hirpara. The website features dark and light mode options, making it user-friendly and visually appealing.
-
-## Project Structure
-
-```
-viru185.github.io
-├── public
-│   └── index.html          # Main HTML file serving as the entry point
-├── src
-│   ├── assets
-│   │   └── styles
-│   │       ├── dark.css    # Styles for dark mode
-│   │       └── light.css   # Styles for light mode
-│   ├── components
-│   │   ├── Header.js       # Header component displaying name and tagline
-│   │   ├── Contact.js      # Component for contact information
-│   │   ├── Education.js    # Component for education details
-│   │   ├── Experience.js   # Component for work experience
-│   │   ├── Skills.js       # Component for skills and tools
-│   │   ├── Projects.js     # Component for personal projects
-│   │   ├── Certifications.js # Component for certifications
-│   │   └── LanguagesInterests.js # Component for languages and interests
-│   ├── App.js              # Main application file managing layout and theme
-│   └── ThemeToggle.js      # Component for toggling between dark and light modes
-├── package.json            # npm configuration file
-└── README.md               # Project documentation
-```
-
-## Features
-
-- **Responsive Design**: The website is designed to be mobile-friendly and adapts to various screen sizes.
-- **Dark and Light Mode**: Users can toggle between dark and light themes for a personalized viewing experience.
-- **Modular Components**: The website is built using modular components, making it easy to edit and maintain.
-
-## Local Setup Instructions
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/viru185/viru185.github.io.git
-   cd viru185.github.io
-   ```
-2. Install dependencies:
-   ```sh
-   npm install
-   ```
-3. Start the development server:
-   ```sh
-   npm start
-   ```
-4. Open your browser and navigate to `http://localhost:3000` to view the website.
+Personal website for Viren Hirpara — a single-page portfolio built with plain HTML, CSS, and JavaScript.  
+The design leans into dark, liquid-glass visuals with subtle motion, a loaded-first impression, and JSON-powered content blocks so updates stay fast.
 
 ---
 
-## Deployment to GitHub Pages (viru185.github.io)
+## Highlights
 
-For user/organization sites like `viru185.github.io`, GitHub Pages only serves from the root of the `main` branch. This means you must build your site locally and copy the contents of the `build` folder to the root of your repository before pushing.
+- **Glassmorphism UI** – sticky frosted header, hero loader, and full-section glass cards inspired by contemporary iOS/iPadOS aesthetics.
+- **Masonry project grid** – variable-height cards with inline metadata, SVG badges for tech stacks, and smart placeholders (`Preview coming soon` / `No preview available`).
+- **Timeline storytelling** – experience and education stretch full width with responsive stacks, keeping the layout legible on any device.
+- **Formspree contact flow** – progressive enhancement for the contact form using the Fetch API and optimistic status messaging.
 
-### 1. Build the production files
+---
 
-```sh
-npm run build
+## Directory overview
+
 ```
-This will create a `build` folder with the production-ready static files.
-
-### 2. Copy the build output to the root of your repository
-
-```sh
-# On Windows PowerShell
-Copy-Item -Path .\build\* -Destination .\ -Recurse -Force
-
-# Remove the build folder (optional)
-Remove-Item -Recurse -Force .\build
+.
+├── assets/
+│   ├── hero_img.jpg
+│   └── project_img/
+│       ├── www.freezemoment.co.uk.png
+│       └── www.virenhirpara.com.png
+├── index.html
+├── src/
+│   ├── data/
+│   │   ├── projects.json       # Portfolio entries + preview metadata
+│   │   └── tech-icons.json     # Inline SVG map for tech pills
+│   ├── script.js               # Loader, nav, masonry rendering, form handler
+│   ├── styles.css              # Core glass theme, layout, responsive rules
+│   └── theme/
+│       └── dark.css            # Placeholder for future theme overrides
+├── package.json                # BrowserSync helper (npm run sync)
+└── README.md
 ```
 
-### 3. Commit and push your changes
+---
 
-```sh
-git add .
-git commit -m "Deploy production build to GitHub Pages"
-git push origin main
+## Editing content
+
+| Goal | Files to touch |
+|------|----------------|
+| Update hero/experience/about copy | `index.html` |
+| Add or edit projects | `src/data/projects.json` (`preview` can be `coming-soon` or `unavailable`) |
+| Add icons for new technologies | `src/data/tech-icons.json` (SVG string keyed by tech name) |
+| Adjust layout/styles | `src/styles.css` (global) or `src/theme/dark.css` (theme overrides) |
+
+---
+
+## Local development
+
+```bash
+git clone https://github.com/viru185/viru185.github.io.git
+cd viru185.github.io
+npm install
+npm run sync   # launches BrowserSync at http://localhost:5173
 ```
 
-### 4. Configure GitHub Pages (one-time setup)
-- Go to your repository on GitHub.
-- Click **Settings** > **Pages**.
-- Under **Source**, select the `main` branch and `/ (root)` folder.
-- Save.
+BrowserSync watches `index.html`, everything inside `src/`, and the `assets/` directory. Save a file and the browser reloads automatically.
 
-### 5. Access your site
-- Visit: https://viru185.github.io
+---
 
-**Note:**
-- It may take a few minutes for changes to appear after each push.
-- For custom domains, configure in the same GitHub Pages settings.
+## Deployment (GitHub Pages)
+
+This repository is already configured as a user site (`viru185.github.io`). Pages serves the root of the `main` branch directly — no static build step is required.
+
+1. Commit your changes:
+   ```bash
+   git add .
+   git commit -m "Describe your change"
+   git push origin main
+   ```
+2. GitHub Pages (Settings → **Pages**) should point to `main / (root)`.
+3. Updates usually appear at <https://viru185.github.io> within a couple of minutes.
+
+If you later introduce a build tool, be sure the build output replaces the root contents before pushing.
+
+---
+
+## Tech stack
+
+- Semantic HTML5
+- Modern CSS (grid, glassmorphism, custom properties)
+- ES2022 JavaScript (no frameworks)
+- BrowserSync for local development
+- Formspree for contact submissions
 
 ---
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request.
+Ideas and improvements are welcome. Please open an issue first for larger UI/UX changes, or submit a pull request with a clear description of what you’re changing.
+
+---
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+MIT © Viren Hirpara — see [`LICENSE`](LICENSE) for full terms.
